@@ -5,43 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Member Registration Portal</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Member Registration Portal</h1>
+            <h1><i class="fas fa-users"></i> Member Registration Portal</h1>
         </div>
     </header>
     
     <div class="container">
         <div class="tabs">
-            <div class="tab active" id="form-tab">Form Pendaftaran</div>
-            <div class="tab" id="members-tab">Daftar Member</div>
+            <div class="tab active" id="form-tab"><i class="fas fa-user-plus"></i> Form Pendaftaran</div>
+            <div class="tab" id="members-tab"><i class="fas fa-clipboard-list"></i> Daftar Member</div>
         </div>
         
-        <div class="form-container" id="form-section">
-            <h2>Formulir Pendaftaran Member</h2>
+        <div class="form-container fade-in" id="form-section">
+            <h2><i class="fas fa-file-signature"></i> Formulir Pendaftaran Member</h2>
             <form id="registration-form">
                 <div class="form-group">
-                    <label for="fullname">Nama Lengkap</label>
+                    <label for="fullname"><i class="fas fa-user"></i> Nama Lengkap</label>
                     <input type="text" id="fullname" class="form-control" placeholder="Masukkan nama lengkap">
                     <div class="error" id="fullname-error"></div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
                     <input type="email" id="email" class="form-control" placeholder="Masukkan email">
                     <div class="error" id="email-error"></div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="phone">Nomor HP</label>
+                    <label for="phone"><i class="fas fa-phone"></i> Nomor HP</label>
                     <input type="tel" id="phone" class="form-control" placeholder="Masukkan nomor HP">
                     <div class="error" id="phone-error"></div>
                 </div>
                 
                 <div class="form-group">
-                    <label>Gender</label>
+                    <label><i class="fas fa-venus-mars"></i> Gender</label>
                     <div class="radio-group">
                         <label>
                             <input type="radio" name="gender" value="Pria"> Pria
@@ -54,29 +56,32 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="birthdate">Tanggal Lahir</label>
+                    <label for="birthdate"><i class="fas fa-calendar-alt"></i> Tanggal Lahir</label>
                     <input type="date" id="birthdate" class="form-control">
                     <div class="error" id="birthdate-error"></div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="address">Alamat</label>
+                    <label for="address"><i class="fas fa-map-marker-alt"></i> Alamat</label>
                     <textarea id="address" class="form-control" rows="4" placeholder="Masukkan alamat lengkap"></textarea>
                     <div class="error" id="address-error"></div>
                 </div>
                 
-                <button type="submit" class="btn">Daftar Member</button>
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Daftar Member</button>
             </form>
         </div>
         
         <div class="member-container" id="members-section">
             <div class="member-actions">
-                <button id="clear-all" class="btn btn-danger">Hapus Semua Data</button>
+                <button id="clear-all" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Hapus Semua Data</button>
             </div>
             
-            <div class="member-list">
-                <h2>Daftar Member Terdaftar</h2>
-                <div id="empty-message">Belum ada member yang terdaftar.</div>
+            <div class="member-list fade-in">
+                <h2><i class="fas fa-clipboard-list"></i> Daftar Member Terdaftar</h2>
+                <div id="empty-message">
+                    <i class="fas fa-user-slash" style="font-size: 48px; display: block; margin-bottom: 15px;"></i>
+                    Belum ada member yang terdaftar.
+                </div>
                 <div class="card-container" id="members-cards">
                     <!-- Member cards will be dynamically added here -->
                 </div>
@@ -88,9 +93,15 @@
     <div id="success-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
+            
+            <div class="checkmark-circle">
+                <div class="background"></div>
+                <div class="checkmark draw"></div>
+            </div>
+            
             <h2>Pendaftaran Berhasil!</h2>
             <p>Data Anda telah berhasil disimpan sebagai member baru.</p>
-            <button class="btn" id="view-members-btn">Lihat Daftar Member</button>
+            <button class="btn" id="view-members-btn"><i class="fas fa-list"></i> Lihat Daftar Member</button>
         </div>
     </div>
     

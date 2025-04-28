@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Registration Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Member Registration Portal</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" id="form-tab">Form Pendaftaran</div>
+            <div class="tab" id="members-tab">Daftar Member</div>
+        </div>
+        
+        <div class="form-container" id="form-section">
+            <h2>Formulir Pendaftaran Member</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="fullname">Nama Lengkap</label>
+                    <input type="text" id="fullname" class="form-control" placeholder="Masukkan nama lengkap">
+                    <div class="error" id="fullname-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Masukkan email">
+                    <div class="error" id="email-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Nomor HP</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Masukkan nomor HP">
+                    <div class="error" id="phone-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="gender" value="Pria"> Pria
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="Wanita"> Wanita
+                        </label>
+                    </div>
+                    <div class="error" id="gender-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="birthdate">Tanggal Lahir</label>
+                    <input type="date" id="birthdate" class="form-control">
+                    <div class="error" id="birthdate-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Alamat</label>
+                    <textarea id="address" class="form-control" rows="4" placeholder="Masukkan alamat lengkap"></textarea>
+                    <div class="error" id="address-error"></div>
+                </div>
+                
+                <button type="submit" class="btn">Daftar Member</button>
+            </form>
+        </div>
+        
+        <div class="member-container" id="members-section">
+            <div class="member-actions">
+                <button id="clear-all" class="btn btn-danger">Hapus Semua Data</button>
+            </div>
+            
+            <div class="member-list">
+                <h2>Daftar Member Terdaftar</h2>
+                <div id="empty-message">Belum ada member yang terdaftar.</div>
+                <div class="card-container" id="members-cards">
+                    <!-- Member cards will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Pendaftaran Berhasil!</h2>
+            <p>Data Anda telah berhasil disimpan sebagai member baru.</p>
+            <button class="btn" id="view-members-btn">Lihat Daftar Member</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
